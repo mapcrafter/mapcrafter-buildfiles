@@ -10,6 +10,6 @@ Homepage: http://mapcrafter.org
 
 Package: mapcrafter
 Architecture: any
-Depends: libpng12-0, libjpeg8 | libjpeg-turbo8, libstdc++6
+Depends: libpng12-0, libjpeg-turbo8 | libjpeg8, libstdc++6
 Description: High Performance Minecraft Map Renderer
  Mapcrafter is a high performance Minecraft map renderer written in C++.
