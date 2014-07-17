@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=$(git describe | grep -Po "\d\.\d\.\d(-\d+)?")
+VERSION=$(git describe | grep -Po "\d\.\d(\.\d)?(-\d+)?")
 GITVERSION=$(git describe)
 DATE=$(date -R)
 
