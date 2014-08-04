@@ -10,7 +10,7 @@
 * `http://downloads.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.tar.gz`
   * There might be a weird problem with boost 1.55 and MinGW (that it can't find some Visual Studio batch files...). Go to tools/build/v2/engine and add a new line in build.bat just before line 93 (":Guess_Toolset"). Don't ask why that works.
 
-3. Clone the Mapcrafter source from GitHub (https://github.com/m0r13/mapcrafter.git).
+3. Clone the Mapcrafter source from GitHub (https://github.com/mapcrafter/mapcrafter.git).
 
 4. Run build_mapcrafter.bat to build Mapcrafter. Mapcrafter will be built in mapcrafter/build/.
 
