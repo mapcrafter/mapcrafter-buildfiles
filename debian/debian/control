@@ -5,8 +5,8 @@ Maintainer: Moritz Hilscher <m0r13@mapcrafter.org>
 Build-Depends: debhelper (>= 8.0.0), cmake, g++ (>= 4.4), libpng-dev, libjpeg-dev
 Standards-Version: 3.9.3
 Homepage: http://mapcrafter.org
-#Vcs-Git: git://git.debian.org/collab-maint/mapcrafter.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/mapcrafter.git;a=summary
+Vcs-Git: https://github.com/mapcrafter/mapcrafter.git
+Vcs-Browser: https://github.com/mapcrafter/mapcrafter
 
 Package: mapcrafter
 Architecture: any

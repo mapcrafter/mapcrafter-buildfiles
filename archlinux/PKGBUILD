@@ -12,7 +12,7 @@ depends=("boost-libs" "libpng" "libjpeg" "curl" "python2")
 optdepends=(
     "python2-pillow: support for mapcrafter_png-it.py script"
 )
-source=("$pkgname"::"git://github.com/m0r13/mapcrafter.git")
+source=("$pkgname"::"git://github.com/mapcrafter/mapcrafter.git")
 md5sums=("SKIP")
 
 pkgver() {
