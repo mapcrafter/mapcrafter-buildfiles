@@ -7,4 +7,6 @@ cmake -G "MinGW Makefiles" -DBOOST_ROOT=%CD%\..\..\lib\boost_1_54_0 -DZLIB_INCLU
 mingw32-make clean
 mingw32-make
 
-pause
+cd ../..
+
+if not defined NOPAUSE pause

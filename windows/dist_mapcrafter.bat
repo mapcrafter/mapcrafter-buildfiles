@@ -11,4 +11,4 @@ cp lib/zlib-1.2.8/zlib1.dll dist
 cp otherlibs/libstdc++-6.dll dist
 cp otherlibs/libgcc_s_dw2-1.dll dist
 
-pause
+if not defined NOPAUSE pause

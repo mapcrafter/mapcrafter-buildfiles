@@ -5,4 +5,6 @@ cmake -G "MinGW Makefiles" -DZLIB_INCLUDE_DIR=../zlib-1.2.8 -DZLIB_LIBRARY=../zl
 mingw32-make clean
 mingw32-make
 
-pause
+cd ..
+
+if not defined NOPAUSE pause
