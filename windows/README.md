@@ -13,11 +13,6 @@
 
 4. Run build_mapcrafter.bat to build Mapcrafter. Mapcrafter will be built in mapcrafter/build/.
 
-5. Put the following files from MinGW (probably from C:\MinGW\bin\) into the otherlibs/ directory:
-
-* `libgcc_s_dw2-1.dll`
-* `libstdc++-6.dll`
-
-6. Run dist_mapcrafter.bat to collect all files to the dist/ directory.
+5. Run dist_mapcrafter.bat to collect all files to the dist/ directory.
 
 That's it.
