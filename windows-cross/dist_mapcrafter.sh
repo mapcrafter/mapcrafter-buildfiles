@@ -9,6 +9,7 @@ cp src/tools/testtextures.exe dist
 cp src/tools/testconfig.exe dist
 cp src/mapcraftercore/libmapcraftercore.dll dist
 cp src/logging.conf dist
+cp ../mapcrafter-gui/release/mapcrafter-gui.exe dist
 
 cp -R src/data dist
 VERSION="1.7.2"
@@ -31,6 +32,7 @@ cp /usr/$ARCH-w64-mingw32/bin/lib{stdc++-6,winpthread-1}.dll dist
 cp /usr/$ARCH-w64-mingw32/bin/libboost_{filesystem,program_options,iostreams,system}-mt.dll dist
 cp /usr/$ARCH-w64-mingw32/bin/lib{jpeg-8,png16-16}.dll dist
 cp /usr/$ARCH-w64-mingw32/bin/{libbz2-1,zlib1}.dll dist
+cp /usr/$ARCH-w64-mingw32/bin/Qt{Core,Gui}.dll dist
 
 rm -rf $RELEASENAME
 mv dist $RELEASENAME
