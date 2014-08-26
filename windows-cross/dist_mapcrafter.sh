@@ -13,9 +13,9 @@ cp mapcrafter-gui/release/mapcrafter-gui.exe dist
 
 cp -R src/data dist
 MC_VERSION="1.7.2"
-wget https://s3.amazonaws.com/Minecraft.Download/versions/$MC_VERSION/$MC_VERSION.jar -O /tmp/mc.jar
-src/tools/mapcrafter_textures.py -f /tmp/mc.jar dist/data/textures
-rm /tmp/mc.jar
+wget https://s3.amazonaws.com/Minecraft.Download/versions/$MC_VERSION/$MC_VERSION.jar -O mc.jar
+src/tools/mapcrafter_textures.py -f mc.jar dist/data/textures
+rm mc.jar
 
 VERSION=$(git describe | grep -Po "\d\.\d(\.\d)?(-\d+)?")
 RELEASENAME="mapcrafter_"$VERSION
