@@ -12,8 +12,8 @@ cp src/logging.conf dist
 cp mapcrafter-gui/release/mapcrafter-gui.exe dist
 
 cp -R src/data dist
-VERSION="1.7.2"
-wget https://s3.amazonaws.com/Minecraft.Download/versions/$VERSION/$VERSION.jar -O /tmp/mc.jar
+MC_VERSION="1.7.2"
+wget https://s3.amazonaws.com/Minecraft.Download/versions/$MC_VERSION/$MC_VERSION.jar -O /tmp/mc.jar
 src/tools/mapcrafter_textures.py -f /tmp/mc.jar dist/data/textures
 rm /tmp/mc.jar
 
@@ -29,9 +29,9 @@ elif [ "$ARCH" = "x86_64" ]; then
 fi
 
 cp /usr/$ARCH-w64-mingw32/bin/lib{stdc++-6,winpthread-1}.dll dist
-cp /usr/$ARCH-w64-mingw32/bin/libboost_{filesystem,program_options,iostreams,system}-mt.dll dist
-cp /usr/$ARCH-w64-mingw32/bin/lib{jpeg-8,png16-16}.dll dist
-cp /usr/$ARCH-w64-mingw32/bin/{libbz2-1,zlib1}.dll dist
+#cp /usr/$ARCH-w64-mingw32/bin/libboost_{filesystem,program_options,iostreams,system}-mt.dll dist
+#cp /usr/$ARCH-w64-mingw32/bin/lib{jpeg-8,png16-16}.dll dist
+#cp /usr/$ARCH-w64-mingw32/bin/{libbz2-1,zlib1}.dll dist
 cp /usr/$ARCH-w64-mingw32/bin/Qt{Core,Gui}4.dll dist
 
 rm -rf $RELEASENAME
