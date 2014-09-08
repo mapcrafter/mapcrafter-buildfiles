@@ -34,6 +34,9 @@ cp /usr/$ARCH-w64-mingw32/bin/lib{stdc++-6,winpthread-1}.dll dist
 #cp /usr/$ARCH-w64-mingw32/bin/{libbz2-1,zlib1}.dll dist
 cp /usr/$ARCH-w64-mingw32/bin/Qt{Core,Gui}4.dll dist
 
+cp VERSION dist/version.txt
+echo " ("$VERSION")" >> dist/version.txt
+
 rm -rf $RELEASENAME
 mv dist $RELEASENAME
 zip -r $RELEASENAME.zip $RELEASENAME
