@@ -6,7 +6,6 @@ mkdir dist
 cp src/mapcrafter.exe dist
 cp src/mapcrafter_markers.exe dist
 cp src/tools/testtextures.exe dist
-cp src/tools/testconfig.exe dist
 cp src/mapcraftercore/libmapcraftercore.dll dist
 cp src/logging.conf dist
 cp mapcrafter-gui/release/mapcrafter-gui.exe dist
