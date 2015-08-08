@@ -1,6 +1,8 @@
 #!/bin/bash
 
-VERSION=$(git describe | grep -Po "\d\.\d(\.\d)?(~\d+)?")
+# http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
+DIR=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
+VERSION=$($DIR/version.sh)
 GITVERSION=$(git describe)
 DATE=$(date -R)
 
