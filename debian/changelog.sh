@@ -6,7 +6,7 @@ VERSION=$($DIR/version.sh)
 GITVERSION=$(git describe)
 DATE=$(date -R)
 
-echo "mapcrafter ($VERSION) unstable; urgency=low"
+echo "mapcrafter ($VERSION-1) unstable; urgency=low"
 echo ""
 echo "  * Git version $GITVERSION"
 echo ""
