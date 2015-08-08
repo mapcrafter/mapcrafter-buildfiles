@@ -13,4 +13,4 @@
 	dh $@
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DOPT_SKIP_TESTS=ON -DOPT_BOOST_STATIC=ON
+	dh_auto_configure -- -DOPT_SKIP_TESTS=ON
