@@ -11,7 +11,7 @@ cp src/logging.conf dist
 cp mapcrafter-gui/release/mapcrafter-gui.exe dist
 
 cp -R src/data dist
-MC_VERSION="1.8.1"
+MC_VERSION=$(cat MCVERSION)
 wget https://s3.amazonaws.com/Minecraft.Download/versions/$MC_VERSION/$MC_VERSION.jar -O mc.jar
 src/tools/mapcrafter_textures.py -f mc.jar dist/data/textures
 rm mc.jar
