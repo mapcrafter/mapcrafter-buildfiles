@@ -16,7 +16,10 @@ wget https://s3.amazonaws.com/Minecraft.Download/versions/$MC_VERSION/$MC_VERSIO
 src/tools/mapcrafter_textures.py -f mc.jar dist/data/textures
 rm mc.jar
 
-VERSION=$(git describe | grep -Po "\d\.\d(\.\d)?(-\d+)?")
+
+# http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
+DIR=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
+VERSION=$($DIR/../version.sh)
 RELEASENAME="mapcrafter_"$VERSION
 
 if [ "$ARCH" = "i686" ]; then
