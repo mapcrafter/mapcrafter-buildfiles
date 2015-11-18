@@ -40,7 +40,11 @@ if [ "$DISTRO" = "debian" ]; then
         exit 1
     fi
 elif [ "$DISTRO" = "ubuntu" ]; then
-    if [ "$RELEASE" = "vivid" ]; then # 15.04
+    if [ "$RELEASE" = "wily" ]; then # 15.10
+        JPEG_DEV="libjpeg-turbo8-dev"
+        JPEG="libjpeg-turbo8"
+        use_boost "1.58"
+    elif [ "$RELEASE" = "vivid" ]; then # 15.04
         JPEG_DEV="libjpeg-turbo8-dev"
         JPEG="libjpeg-turbo8"
         use_boost "1.55"
