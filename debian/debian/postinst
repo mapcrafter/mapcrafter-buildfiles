@@ -20,7 +20,7 @@ set -e
 
 case "$1" in
     configure)
-		VERSION="1.9"
+		VERSION=$(mapcrafter --mc-version)
 		wget https://s3.amazonaws.com/Minecraft.Download/versions/$VERSION/$VERSION.jar -O /tmp/mc.jar
 		mapcrafter_textures.py -f /tmp/mc.jar /usr/share/mapcrafter/textures
 		rm /tmp/mc.jar
