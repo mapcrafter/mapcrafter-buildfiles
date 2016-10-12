@@ -40,6 +40,10 @@ if [ "$DISTRO" = "debian" ]; then
         exit 1
     fi
 elif [ "$DISTRO" = "ubuntu" ]; then
+    if [ "$RELEASE" = "yakkety" ]; then # 16.10
+        JPEG_DEV="libjpeg-turbo8-dev"
+        JPEG="libjpeg-turbo8"
+        use_boost "1.58"
     if [ "$RELEASE" = "xenial" ]; then # 16.04
         JPEG_DEV="libjpeg-turbo8-dev"
         JPEG="libjpeg-turbo8"
