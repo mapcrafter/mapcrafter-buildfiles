@@ -44,7 +44,7 @@ elif [ "$DISTRO" = "ubuntu" ]; then
         JPEG_DEV="libjpeg-turbo8-dev"
         JPEG="libjpeg-turbo8"
         use_boost "1.58"
-    if [ "$RELEASE" = "xenial" ]; then # 16.04
+    elif [ "$RELEASE" = "xenial" ]; then # 16.04
         JPEG_DEV="libjpeg-turbo8-dev"
         JPEG="libjpeg-turbo8"
         use_boost "1.58"
