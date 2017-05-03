@@ -1,0 +1,36 @@
+name: mapcrafter
+version: '0.1-alpha'
+summary: High-performance Minecraft map renderer.
+description: |
+  High-performance Minecraft map renderer.
+  Mapcrafter is a high performance Minecraft map renderer written in 
+  C++ which renders your Minecraft worlds to fancy maps viewable in
+  any webbrowser.
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+parts:
+  mapcrafter:
+    # See 'snapcraft plugins'
+    plugin: cmake
+    source: https://github.com/mapcrafter/mapcrafter
+    source-type: git
+    source-tag: master
+    build-packages: 
+     - cmake
+     - build-essential
+     - libjpeg-turbo8-dev
+     - libpng12-dev
+     - libboost-iostreams-dev
+     - libboost-system-dev
+     - libboost-filesystem-dev
+     - libboost-program-options-dev
+     - libboost-test-dev
+    stage-packages:
+     - libjpeg-turbo8
+     - libpng12-0
+     - libboost-iostreams1.58.0
+     - libboost-system1.58.0
+     - libboost-filesystem1.58.0
+     - libboost-program-options1.58.0
