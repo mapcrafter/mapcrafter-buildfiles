@@ -7,6 +7,10 @@ This has been uploaded to the snap store, and can be installed as follows:
 
     sudo snap install --edge --devmode mapcrafter
 
+If you wish to upgrade to a newer release on the edge channel, you can run:
+
+    sudo snap refresh --devmode --edge mapcrafter
+
 
 Commands
 ========
