@@ -41,6 +41,7 @@ parts:
      - libboost-program-options-dev
      - libboost-test-dev
     stage-packages:
+     - imagemagick
      - libjpeg-turbo8
      - libpng12-0
      - libboost-iostreams1.58.0
