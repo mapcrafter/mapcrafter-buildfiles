@@ -31,13 +31,33 @@ The following will extract usable textures using the 1.11.2 version of the `clie
 
     sudo snap install --edge --devmode mapcrafter
     
-    export SNAP_HOME="$(mapcrafter --find-resources | grep "Your home" | grep -o '/.*')"
-    mkdir -p ~/.mapcrafter/data/textures && \
+    mkdir -p ~/.mapcrafter/textures && \
         mapcrafter.export-textures \
             -f ~/.minecraft/versions/1.11.2/1.11.2.jar \
-            "$SNAP_HOME"/textures
+            ~/.mapcrafter/textures
+
+    # This is a workaround for a bug; a more recent version of Minecraft seems
+    # to have moved where this texture is located.
+    cd ~/.mapcrafter/textures/blocks
+    ln portal.png ../endportal.png
+
+Create a configuration to point to your Mincraft world data files. The
+following is a simple example, which would render a save file called "Test"
+from the local client:
+
+    output_dir = output
+
+    [world:test]
+    input_dir = /home/user/.minecraft/saves/Test
+
+    [map:test]
+    world = test
+
+Then run Mapcrafter as follows:
 
     mapcrafter -c ./render.conf -j 8
+
+
 
 
 Development
