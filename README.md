@@ -58,8 +58,6 @@ Then run Mapcrafter as follows:
     mapcrafter -c ./render.conf -j 8
 
 
-
-
 Development
 ===========
 
@@ -75,3 +73,8 @@ Known Issues
 ============
 
  * Confinement level should be increased (probably to `classic`).
+   * Blocking issue: https://launchpad.net/bugs/1688335
+ * Should build based on a tag instead of a branch.
+   * Blocking issue: https://launchpad.net/bugs/1687967
+ * Should not assume `$HOME` will be `/home/<user>`.
+   * Blocking issue: https://launchpad.net/bugs/1688103
