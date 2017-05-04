@@ -1,3 +1,4 @@
+*.snap-build
 *.swp
 parts/
 prime/
