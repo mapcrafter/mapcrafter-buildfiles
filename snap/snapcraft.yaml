@@ -7,21 +7,35 @@ description: |
   C++ which renders your Minecraft worlds to fancy maps viewable in
   any webbrowser.
 
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+grade: devel
+confinement: devmode
+
 
 apps:
   mapcrafter:
+    plugs:
+     - home
     command: bin/mapcrafter
     environment:
       LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/lib:$SNAP/usr/lib/x86_64-linux-gnu
-      PATH: $PATH:$SNAP/bin:$SNAP/usr/bin
-      LANG: C
+      MAGICK_CONFIGURE_PATH: $SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/config-Q16:$SNAP/etc/ImageMagick-6
+      MAGICK_CODER_MODULE_PATH: $SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/modules-Q16/coders
+      MAGICK_HOME: $SNAP
+      PATH: $PATH:$SNAP/bin:$SNAP/usr/bin:$SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/bin-Q16
+      LANG: C 
+
   export-textures:
+    plugs:
+     - home
     command: bin/mapcrafter_textures.py
     environment:
       LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/lib:$SNAP/usr/lib/x86_64-linux-gnu
-      PATH: $PATH:$SNAP/bin:$SNAP/usr/bin
+      MAGICK_CONFIGURE_PATH: $SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/config-Q16:$SNAP/etc/ImageMagick-6
+      MAGICK_CODER_MODULE_PATH: $SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/modules-Q16/coders
+      MAGICK_HOME: $SNAP
+      PATH: $PATH:$SNAP/bin:$SNAP/usr/bin:$SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/bin-Q16
+      LANG: C 
+
 
 parts:
   mapcrafter:

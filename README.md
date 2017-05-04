@@ -24,6 +24,22 @@ have been made available:
    (Used to export textures from the Minecraft jar.)
 
 
+Usage Examples
+==============
+
+The following will extract usable textures using the 1.11.2 version of the `client.jar`:
+
+    sudo snap install --edge --devmode mapcrafter
+    
+    export SNAP_HOME="$(mapcrafter --find-resources | grep "Your home" | grep -o '/.*')"
+    mkdir -p ~/.mapcrafter/data/textures && \
+        mapcrafter.export-textures \
+            -f ~/.minecraft/versions/1.11.2/1.11.2.jar \
+            "$SNAP_HOME"/textures
+
+    mapcrafter -c ./render.conf -j 8
+
+
 Development
 ===========
 
