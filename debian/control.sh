@@ -27,11 +27,15 @@ DISTRO="$1"
 RELEASE="$2"
 
 if [ "$DISTRO" = "debian" ]; then
-    if [ "$RELEASE" = "jessie" ]; then # stable
+    if [ "$RELEASE" = "stretch" ]; then # stable
+        JPEG_DEV="libjpeg62-turbo-dev"
+        JPEG="libjpeg62-turbo"
+        use_boost "1.62"
+    elif [ "$RELEASE" = "jessie" ]; then # old stable
         JPEG_DEV="libjpeg62-turbo-dev"
         JPEG="libjpeg62-turbo"
         use_boost "1.55"
-    elif [ "$RELEASE" = "wheezy" ]; then # oldstable
+    elif [ "$RELEASE" = "wheezy" ]; then # old old stable
         JPEG_DEV="libjpeg8-dev"
         JPEG="libjpeg8"
         use_boost "1.49"
@@ -40,7 +44,13 @@ if [ "$DISTRO" = "debian" ]; then
         exit 1
     fi
 elif [ "$DISTRO" = "ubuntu" ]; then
-    if [ "$RELEASE" = "yakkety" ]; then # 16.10
+    if [ "$RELEASE" = "zesty" ]; then # 17.04
+        PNG_DEV="libpng-dev"
+        PNG="libpng16-16"
+        JPEG_DEV="libjpeg-turbo8-dev"
+        JPEG="libjpeg-turbo8"
+        use_boost "1.61"
+    elif [ "$RELEASE" = "yakkety" ]; then # 16.10
         PNG_DEV="libpng-dev"
         PNG="libpng16-16"
         JPEG_DEV="libjpeg-turbo8-dev"
