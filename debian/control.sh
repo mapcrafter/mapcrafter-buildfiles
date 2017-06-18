@@ -28,6 +28,8 @@ RELEASE="$2"
 
 if [ "$DISTRO" = "debian" ]; then
     if [ "$RELEASE" = "stretch" ]; then # stable
+        PNG_DEV="libpng-dev"
+        PNG="libpng16-16"
         JPEG_DEV="libjpeg62-turbo-dev"
         JPEG="libjpeg62-turbo"
         use_boost "1.62"
