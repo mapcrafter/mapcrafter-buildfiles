@@ -1,0 +1,126 @@
+name: mapcrafter
+version: 'v2.3.1-snap-alpha'
+summary: High-performance Minecraft map renderer.
+description: |
+  High-performance Minecraft map renderer.
+  Mapcrafter is a high performance Minecraft map renderer written in 
+  C++ which renders your Minecraft worlds to fancy maps viewable in
+  any webbrowser.
+
+grade: devel
+confinement: devmode
+
+
+apps:
+  mapcrafter:
+    plugs:
+     - home
+    command: bin/mapcrafter
+    environment:
+      LD_LIBRARY_PATH: $SNAP/lib:$SNAP/usr/lib/x86_64-linux-gnu
+      MAGICK_CONFIGURE_PATH: $SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/config-Q16:$SNAP/etc/ImageMagick-6
+      MAGICK_CODER_MODULE_PATH: $SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/modules-Q16/coders
+      MAGICK_HOME: $SNAP
+      PATH: $PATH:$SNAP/bin:$SNAP/usr/bin:$SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/bin-Q16
+      HOME: /home/$LOGNAME
+      LANG: C 
+
+  export-textures:
+    plugs:
+     - home
+    command: bin/mapcrafter_textures.py
+    environment:
+      LD_LIBRARY_PATH: $SNAP/lib:$SNAP/usr/lib/x86_64-linux-gnu
+      MAGICK_CONFIGURE_PATH: $SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/config-Q16:$SNAP/etc/ImageMagick-6
+      MAGICK_CODER_MODULE_PATH: $SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/modules-Q16/coders
+      MAGICK_HOME: $SNAP
+      PATH: $PATH:$SNAP/bin:$SNAP/usr/bin:$SNAP/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/bin-Q16
+      HOME: /home/$LOGNAME
+      LANG: C 
+
+
+parts:
+  mapcrafter:
+    # See 'snapcraft plugins'
+    plugin: cmake
+    source: https://github.com/mapcrafter/mapcrafter
+    source-type: git
+    source-tag: master
+    build-packages: 
+     - cmake
+     - build-essential
+     - libjpeg-turbo8-dev
+     - libpng12-dev
+     - libboost-iostreams-dev
+     - libboost-system-dev
+     - libboost-filesystem-dev
+     - libboost-program-options-dev
+     - libboost-test-dev
+    stage-packages:
+     - libboost-iostreams1.58.0
+     - libboost-system1.58.0
+     - libboost-filesystem1.58.0
+     - libboost-program-options1.58.0
+     - python-minimal
+     - python2.7
+     # apt-rdepends imagemagick | grep -v '^ ' | sort | xargs -n1 printf "     - %s\n"
+     - coreutils
+     - debconf
+     - dpkg
+     - fontconfig-config
+     - fonts-dejavu-core
+     - fonts-freefont-ttf
+     - gcc-5-base
+     - gcc-6-base
+     - gsfonts
+     - gsfonts-x11
+     - hicolor-icon-theme
+     - imagemagick
+     - imagemagick-6.q16
+     - imagemagick-common
+     - libacl1
+     - libattr1
+     - libbz2-1.0
+     - libc6
+     - libexpat1
+     - libffi6
+     - libfftw3-double3
+     - libfontconfig1
+     - libfontenc1
+     - libfreetype6
+     - libgcc1
+     - libglib2.0-0
+     - libgomp1
+     - libicu55
+     - libjbig0
+     - libjpeg8
+     - libjpeg-turbo8
+     - liblcms2-2
+     - liblqr-1-0
+     - libltdl7
+     - liblzma5
+     - libmagickcore-6.q16-2
+     - libmagickwand-6.q16-2
+     - libpcre3
+     - libselinux1
+     - libstdc++6
+     - libtiff5
+     - libx11-6
+     - libx11-data
+     - libxau6
+     - libxcb1
+     - libxdmcp6
+     - libxext6
+     - libxfont1
+     - libxml2
+     - lsb-base
+     - multiarch-support
+     - perl-base
+     - tar
+     - ttf-bitstream-vera
+     - ucf
+     - x11-common
+     - xfonts-encodings
+     - xfonts-utils
+     - zlib1g
+

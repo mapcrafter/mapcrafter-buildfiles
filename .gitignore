@@ -1,0 +1,6 @@
+*.snap-build
+*.swp
+parts/
+prime/
+stage/
+*.snap
