@@ -46,7 +46,13 @@ if [ "$DISTRO" = "debian" ]; then
         exit 1
     fi
 elif [ "$DISTRO" = "ubuntu" ]; then
-    if [ "$RELEASE" = "zesty" ]; then # 17.04
+    if [ "$RELEASE" = "artful" ]; then # 17.10
+        PNG_DEV="libpng-dev"
+        PNG="libpng16-16"
+        JPEG_DEV="libjpeg-turbo8-dev"
+        JPEG="libjpeg-turbo8"
+        use_boost "1.62"
+    elif [ "$RELEASE" = "zesty" ]; then # 17.04
         PNG_DEV="libpng-dev"
         PNG="libpng16-16"
         JPEG_DEV="libjpeg-turbo8-dev"
