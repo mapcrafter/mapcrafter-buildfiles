@@ -46,27 +46,33 @@ if [ "$DISTRO" = "debian" ]; then
         exit 1
     fi
 elif [ "$DISTRO" = "ubuntu" ]; then
-    if [ "$RELEASE" = "zesty" ]; then # 17.04
+    if [ "$RELEASE" = "bionic" ]; then # 18.04 LTS
+        PNG_DEV="libpng-dev"
+        PNG="libpng16-16"
+        JPEG_DEV="libjpeg-turbo8-dev"
+        JPEG="libjpeg-turbo8"
+        use_boost "1.65"
+    elif [ "$RELEASE" = "zesty" ]; then # 17.04 (not built anymore?)
         PNG_DEV="libpng-dev"
         PNG="libpng16-16"
         JPEG_DEV="libjpeg-turbo8-dev"
         JPEG="libjpeg-turbo8"
         use_boost "1.61"
-    elif [ "$RELEASE" = "yakkety" ]; then # 16.10
+    elif [ "$RELEASE" = "yakkety" ]; then # 16.10 (not built anymore)
         PNG_DEV="libpng-dev"
         PNG="libpng16-16"
         JPEG_DEV="libjpeg-turbo8-dev"
         JPEG="libjpeg-turbo8"
         use_boost "1.60"
-    elif [ "$RELEASE" = "xenial" ]; then # 16.04
+    elif [ "$RELEASE" = "xenial" ]; then # 16.04 LTS
         JPEG_DEV="libjpeg-turbo8-dev"
         JPEG="libjpeg-turbo8"
         use_boost "1.58"
-    elif [ "$RELEASE" = "wily" ]; then # 15.10
+    elif [ "$RELEASE" = "wily" ]; then # 15.10 (not built anymore)
         JPEG_DEV="libjpeg-turbo8-dev"
         JPEG="libjpeg-turbo8"
         use_boost "1.58"
-    elif [ "$RELEASE" = "vivid" ]; then # 15.04
+    elif [ "$RELEASE" = "vivid" ]; then # 15.04 (not built anymore)
         JPEG_DEV="libjpeg-turbo8-dev"
         JPEG="libjpeg-turbo8"
         use_boost "1.55"
@@ -74,7 +80,7 @@ elif [ "$DISTRO" = "ubuntu" ]; then
         JPEG_DEV="libjpeg-turbo8-dev"
         JPEG="libjpeg-turbo8"
         use_boost "1.55"
-    elif [ "$RELEASE" = "precise" ]; then # 12.04 LTS
+    elif [ "$RELEASE" = "precise" ]; then # 12.04 LTS (not built anymore)
         JPEG_DEV="libjpeg-turbo8-dev"
         JPEG="libjpeg-turbo8"
         use_boost "1.48"
