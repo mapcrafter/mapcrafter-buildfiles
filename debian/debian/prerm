@@ -19,7 +19,7 @@ set -e
 
 case "$1" in
 	remove|deconfigure|failed-upgrade)
-		find /usr/share/mapcrafter/textures/* -maxdepth 0 ! -name "endportal.png" -exec rm -rf {} \;
+		find /usr/share/mapcrafter-legacy/textures/* -maxdepth 0 ! -name "endportal.png" -exec rm -rf {} \;
 	;;
 
 	upgrade)

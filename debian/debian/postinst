@@ -20,9 +20,9 @@ set -e
 
 case "$1" in
     configure)
-		VERSION=$(mapcrafter --mc-version)
+		VERSION=$(mapcrafter-legacy --mc-version)
 		wget https://s3.amazonaws.com/Minecraft.Download/versions/$VERSION/$VERSION.jar -O /tmp/mc.jar
-		mapcrafter_textures.py -f /tmp/mc.jar /usr/share/mapcrafter/textures
+		mapcrafter-legacy_textures.py -f /tmp/mc.jar /usr/share/mapcrafter-legacy/textures
 		rm /tmp/mc.jar
     ;;
 
