@@ -34,6 +34,8 @@ cp /usr/$ARCH-w64-mingw32/bin/lib{stdc++-6,winpthread-1}.dll dist
 #cp /usr/$ARCH-w64-mingw32/bin/libboost_{filesystem,program_options,iostreams,system}-mt.dll dist
 #cp /usr/$ARCH-w64-mingw32/bin/lib{jpeg-8,png16-16}.dll dist
 #cp /usr/$ARCH-w64-mingw32/bin/{libbz2-1,zlib1}.dll dist
+cp /usr/$ARCH-w64-mingw32/bin/libpng16-16.dll dist
+cp /usr/$ARCH-w64-mingw32/bin/zlib1.dll dist
 cp /usr/$ARCH-w64-mingw32/bin/Qt{Core,Gui}4.dll dist
 
 cp VERSION dist/version.txt
