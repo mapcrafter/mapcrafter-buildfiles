@@ -3,17 +3,17 @@
 rm -rf dist
 mkdir dist
 
-cp src/mapcrafter.exe dist
-cp src/mapcrafter_markers.exe dist
-cp src/tools/testtextures.exe dist
-cp src/mapcraftercore/libmapcraftercore.dll dist
+cp src/mapcrafter-legacy.exe dist
+cp src/mapcrafter-legacy-markers.exe dist
+#cp src/tools/testtextures.exe dist
+cp src/mapcraftercore/libmapcraftercore-legacy.dll dist
 cp src/logging.conf dist
 cp mapcrafter-gui/release/mapcrafter-gui.exe dist
 
 cp -R src/data dist
 MC_VERSION=$(cat MCVERSION)
 wget https://s3.amazonaws.com/Minecraft.Download/versions/$MC_VERSION/$MC_VERSION.jar -O mc.jar
-src/tools/mapcrafter_textures.py -f mc.jar dist/data/textures
+src/tools/mapcrafter-legacy-textures.py -f mc.jar dist/data/textures
 rm mc.jar
 
 
